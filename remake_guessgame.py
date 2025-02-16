@@ -26,12 +26,16 @@ def who_won():
     if player_score > computer_score:
         print(f"You Won The Most Games! Your Score {player_score} Computer Score {computer_score}")
         print("Thanks For Playing!")
+        exit()
     elif player_score < computer_score:
         print(f"You Lost The Total Games! Your Score {player_score} Computer Score {computer_score} ")
         print("Maybe You Will Do Better Next Time!")
         print("Thanks For Playing!")
+        exit()
     elif player_score == computer_score:
         print(f"You Tied! Your {player_score} Computer Score {computer_score}")
+        print("Thanks For Playing!")
+        exit()
 
 def play_again():
     global player_score
