@@ -21,6 +21,18 @@ if guess_range <= 0:
 player_score = 0
 computer_score = 0
 
+
+def who_won():
+    if player_score > computer_score:
+        print(f"You Won The Most Games! Your Score {player_score} Computer Score {computer_score}")
+        print("Thanks For Playing!")
+    elif player_score < computer_score:
+        print(f"You Lost The Total Games! Your Score {player_score} Computer Score {computer_score} ")
+        print("Maybe You Will Do Better Next Time!")
+        print("Thanks For Playing!")
+    elif player_score == computer_score:
+        print(f"You Tied! Your {player_score} Computer Score {computer_score}")
+
 def play_again():
     global player_score
     global computer_score
@@ -30,7 +42,7 @@ def play_again():
     if player_choice == "y":
         play_game()
     elif player_choice == "n":
-        exit()
+        who_won()
     else:
         play_again()
 
@@ -41,8 +53,8 @@ def play_game():
     global computer_score
     global actual_life
     guess_number = random.randint(1, guess_range)
-    player_life = 4 
-    actual_life = 5
+    player_life = 3 
+    actual_life = 4
     while True:
         player_guess = int(input("Guess: "))
         if player_guess == guess_number:
